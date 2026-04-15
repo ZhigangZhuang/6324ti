@@ -1,0 +1,192 @@
+/* ── RESET & BASE ── */
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{font-size:16px;}
+body{
+  background:#ffffff;
+  color:#1a1a1a;
+  font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",
+               "WenQuanYi Micro Hei",sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── LAYOUT ── */
+#app{
+  max-width:520px;
+  margin:0 auto;
+  padding:0 16px 80px;
+  position:relative;
+}
+
+/* ── HEADER ── */
+.hdr{
+  text-align:center;
+  padding:44px 0 28px;
+  border-bottom:1px solid #e8e4de;
+  margin-bottom:32px;
+}
+.hdr-eye{
+  font-size:10px;letter-spacing:.3em;
+  color:#c07a10;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.hdr-logo{
+  font-size:clamp(72px,22vw,108px);
+  font-weight:900;
+  line-height:.9;
+  letter-spacing:-.03em;
+  color:#1a1a1a;
+  position:relative;
+  display:inline-block;
+}
+.hdr-logo em{
+  font-style:normal;
+  color:#e8a020;
+}
+.hdr-sub{
+  font-size:13px;color:#999;
+  margin-top:10px;letter-spacing:.05em;
+}
+
+/* ── INTRO ── */
+.intro{padding:4px 0 16px;}
+
+.btn-start{
+  display:block;width:100%;
+  background:#e8a020;
+  color:#fff;
+  border:none;border-radius:8px;
+  padding:18px;
+  font-size:17px;font-weight:900;
+  letter-spacing:.15em;
+  cursor:pointer;
+  transition:transform .15s,box-shadow .15s;
+  font-family:inherit;
+}
+.btn-start:active{transform:scale(.97);}
+
+/* ── PROGRESS ── */
+.progress{margin-bottom:24px;padding-top:20px;}
+.prog-row{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:11px;color:#aaa;
+  letter-spacing:.06em;margin-bottom:8px;
+}
+.prog-track{height:3px;background:#f0ece6;border-radius:3px;overflow:hidden;}
+.prog-fill{
+  height:100%;background:#e8a020;border-radius:3px;
+  transition:width .35s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── QUESTION ── */
+.q-enter{animation:qIn .28s ease both;}
+@keyframes qIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+.q-num{
+  font-size:10px;letter-spacing:.2em;color:#c07a10;
+  text-transform:uppercase;margin-bottom:12px;
+}
+.q-text{
+  font-size:clamp(15px,4vw,19px);
+  font-weight:700;line-height:1.55;
+  margin-bottom:20px;
+  color:#1a1a1a;
+}
+.opts{display:flex;flex-direction:column;gap:9px;}
+.opt{
+  background:#faf8f5;
+  border:1px solid #e8e4de;
+  border-radius:8px;
+  padding:14px 16px;
+  text-align:left;
+  color:#333;
+  font-size:14px;line-height:1.6;
+  cursor:pointer;
+  transition:background .15s,border-color .15s,transform .1s;
+  font-family:inherit;
+  position:relative;
+}
+.opt:active{
+  background:#fdf4e3;
+  border-color:#e8a020;
+  transform:scale(.985);
+}
+@media(hover:hover){
+  .opt:hover{background:#fdf4e3;border-color:#d4901a;}
+}
+
+/* ── RESULT ── */
+.result{animation:qIn .4s ease both;}
+
+.r-top{text-align:center;padding:8px 0 24px;}
+.r-eyebrow{
+  font-size:10px;letter-spacing:.25em;color:#c07a10;
+  text-transform:uppercase;margin-bottom:14px;
+}
+.r-name{
+  font-size:clamp(60px,18vw,96px);
+  font-weight:900;line-height:.9;
+  letter-spacing:-.02em;
+  color:#1a1a1a;
+  margin-bottom:8px;
+}
+.r-alias{font-size:12px;color:#aaa;letter-spacing:.06em;}
+
+.r-tags{
+  display:flex;flex-wrap:wrap;gap:7px;
+  justify-content:center;
+  margin:20px 0 24px;
+}
+.r-tag{
+  background:#f5f2ed;border:1px solid #e8e4de;
+  border-radius:20px;padding:4px 12px;
+  font-size:12px;color:#999;
+}
+.r-tag.hot{border-color:#e8a020;color:#c07a10;}
+
+.r-divider{height:1px;background:#f0ece6;margin-bottom:24px;}
+
+.r-card{
+  background:#faf8f5;
+  border:1px solid #e8e4de;
+  border-left:3px solid #e8a020;
+  border-radius:8px;
+  padding:20px;
+  font-size:14px;line-height:1.85;
+  color:#444;
+  margin-bottom:14px;
+}
+.r-quote{
+  background:#fdf8f0;
+  border:1px solid #f0e8d0;
+  border-radius:8px;
+  padding:16px 18px;
+  font-size:13px;color:#999;
+  font-style:italic;
+  text-align:center;
+  margin-bottom:28px;
+  line-height:1.75;
+}
+.r-quote::before{content:'「';color:#e8a020;font-style:normal;}
+.r-quote::after{content:'」';color:#e8a020;font-style:normal;}
+
+.btn-again{
+  display:block;width:100%;
+  background:transparent;
+  border:1px solid #e8a020;
+  color:#c07a10;
+  border-radius:8px;
+  padding:16px;
+  font-size:15px;font-weight:700;
+  letter-spacing:.12em;
+  cursor:pointer;
+  transition:background .15s,color .15s;
+  font-family:inherit;
+}
+.btn-again:active{background:#e8a020;color:#fff;}
+
+/* ── SAFE AREA (iPhone home bar) ── */
+@supports(padding-bottom:env(safe-area-inset-bottom)){
+  #app{padding-bottom:calc(80px + env(safe-area-inset-bottom));}
+}
