@@ -51,6 +51,11 @@ body{
 
 /* ── INTRO ── */
 .intro{padding:4px 0 16px;}
+.intro-notice{
+  margin-top:12px;
+  font-size:11px;color:#bbb;
+  text-align:center;line-height:1.6;
+}
 
 .btn-start{
   display:block;width:100%;
